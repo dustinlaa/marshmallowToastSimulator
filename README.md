@@ -1,6 +1,6 @@
 
-<font  size ="7"> **Marshmallow Toast Simulator** </font>  
-<font  size ="5"> **HackNJIT 2022** </font>  
+<font  size ="10"> **Marshmallow Toast Simulator** </font>  
+<font  size ="7"> **HackNJIT 2022** </font>  
 <font  size ="4"> **Created by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala** </font>  
 ---
 
