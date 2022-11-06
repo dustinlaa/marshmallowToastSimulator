@@ -1,10 +1,10 @@
 
-<font  size ="10"> **Marshmallow Toast Simulator** </font>  
-<font  size ="7"> **HackNJIT 2022** </font>  
-<font  size ="4"> **Created by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala** </font>  
+# Marshmallow Toast Simulator
+##  HackNJIT 2022
+### Created by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala 
 ---
 
-<font  size ="6">**Welcome to Marshmallow Toast Simulator!** </font>
+**Welcome to Marshmallow Toast Simulator!**
 
 Your goal is to get your marshmallow to a scrumptious golden brown.
 
