@@ -1,4 +1,4 @@
-<font size = "7"> Marshmallow Toast Simulator </font>
+<font size= "7"> Marshmallow Toast Simulator </font>
 # HackNJIT 2022
 # Created by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala
 
