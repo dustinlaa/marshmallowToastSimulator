@@ -33,7 +33,7 @@ def holdOver(time, limit): # The amount of time holding marshmallow over campfir
     if time == 1:
         randTimes = random.randint(limit//12,limit//9) # Between 1/12 and 1/9 the limit
     elif time ==2:
-        randTimes = random.randint(limit//8,limit//5) # Between 1/8 and 1/4 the limit
+        randTimes = random.randint(limit//8,limit//5) # Between 1/8 and 1/5 the limit
     elif time == 3:
         randTimes = random.randint(limit//4,limit//2) # Between 1/4 and 1/2 the limit
     return randTimes
@@ -54,15 +54,15 @@ def incrStreak(case): # Increments streak for each golden brown marshmallow
 
 def stopToasting(case,marshToast): # Final status of marshmallow
     statement = []
-    if case == 1: 
+    if case == 1: # Squishy
         statement = ["Not even close! Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks pretty squishy"]
-    elif case == 2:
+    elif case == 2: # Starting to get brown
         statement = ["Somewhat passable. Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks slightly brown and a lil scrumptious"]
-    elif case == 3:
+    elif case == 3: # Very nice brown
         statement = ["Oooh you almost had it. Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks very good with a nice brown tint"]
-    elif case == 4:
+    elif case == 4: # Golden Brown
         statement = ["Congrats! Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks a perfect golden brown :O"]
-    elif case == 5:
+    elif case == 5: # Burnt
         statement = ["Your marshmallow burnt and is now icky :("]
     return statement
 
