@@ -1,6 +1,6 @@
 
 # Marshmallow Toast Simulator
-## HackNJIT 2022
+# HackNJIT 2022
 ## Created by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala
 
 
