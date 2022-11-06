@@ -1,12 +1,11 @@
 # HackNJIT 2022 - Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala
 import random
 
-#Globals
-#---------------
+# Globals
 global limit
 limit = random.randint(20,50)
-global marshCook
-marshCook = 0
+global marshToast
+marshToast = 0
 global randTime
 randTime = 0
 flag = False
@@ -17,37 +16,35 @@ global scoreArray
 scoreArray = [0]
 global checkStreak
 checkStreak = False
-#--------------
 
-def getLimit():
+def getLimit(): # Generates a random max limit between 20 and 50 (going over results in burnt)
     limit = random.randint(20,50)
     return limit
 
-def reset():
-    #resets both global variables that would need to be reset
-    global marshCook
+def reset(): # Resets both global variables that would need to be reset
+    global marshToast
     global currStreak
     global checkStreak
-    marshCook = 0
+    marshToast = 0
     checkStreak = False
 
-def holdOver(time, limit):
+def holdOver(time, limit): # The amount of time holding marshmallow over campfire and its result
     #time = hold over choice, limit = limit
     if time == 1:
-        randTimes = random.randint(limit//12,limit//5)
+        randTimes = random.randint(limit//12,limit//9) # Between 1/12 and 1/9 the limit
     elif time ==2:
-        randTimes = random.randint(limit//8,limit//3)
+        randTimes = random.randint(limit//8,limit//5) # Between 1/8 and 1/4 the limit
     elif time == 3:
-        randTimes = random.randint(limit//4,limit//2)
+        randTimes = random.randint(limit//4,limit//2) # Between 1/4 and 1/2 the limit
     return randTimes
 
-def roastMarshmallow(time):
-    global marshCook
+def toastMarshmallow(time): # Roasts marshamllow based on duratino of time and adds it to the total
+    global marshToast
     global randTime
     randTime = holdOver(time, limit)
-    marshCook = randTime + marshCook 
+    marshToast = randTime + marshToast 
 
-def incrStreak(case):
+def incrStreak(case): # Increments streak for each golden brown marshmallow
     global currStreak
     if case == 4:
         currStreak = currStreak + 1
@@ -55,34 +52,33 @@ def incrStreak(case):
         currStreak = 0
     return currStreak
 
-def stopRoasting(case,marshCook):
-    #case and time
+def stopToasting(case,marshToast): # Final status of marshmallow
     statement = []
-    if case == 1:
-        statement = ["Not even close! Your lil marshmallow was cooked for " + str(marshCook) + " seconds,", "and looks pretty squishy"]
+    if case == 1: 
+        statement = ["Not even close! Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks pretty squishy"]
     elif case == 2:
-        statement = ["Somewhat passable. Your lil marshmallow was cooked for " + str(marshCook) + " seconds,", "and looks slightly brown and a lil scrumptious"]
+        statement = ["Somewhat passable. Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks slightly brown and a lil scrumptious"]
     elif case == 3:
-        statement = ["Oooh you almost had it. Your lil marshmallow was cooked for " + str(marshCook) + " seconds,", "and looks very good with a nice brown tint"]
+        statement = ["Oooh you almost had it. Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks very good with a nice brown tint"]
     elif case == 4:
-        statement = ["Congrats! Your lil marshmallow was cooked for " + str(marshCook) + " seconds,", "and looks a perfect golden brown :O"]
+        statement = ["Congrats! Your lil marshmallow was cooked for " + str(marshToast) + " seconds", "and looks a perfect golden brown :O"]
     elif case == 5:
         statement = ["Your marshmallow burnt and is now icky :("]
     return statement
 
-def checkIfBurnt(limit, marshCook):
-    distToBurnt = limit - marshCook
+def checkIfBurnt(limit, marshToast): # Checks status of Marshmallow
+    distToBurnt = limit - marshToast
     global case
-    if (distToBurnt > .6*limit):
+    if (distToBurnt > .6*limit): # > 60% of the limit
         status = "Your Marshmallow is still pretty squishy"
         case = 1
-    elif (distToBurnt >= .35*limit): 
+    elif (distToBurnt >= .35*limit): # > 35% of the limit
         status = "Your Marshmallow is starting to get brown"
         case = 2
-    elif (distToBurnt >= .1*limit):
+    elif (distToBurnt >= .1*limit): # >= 10% of the limit
         status = "Your Marshmallow is a very nice brown. ;)"
         case = 3
-    elif (distToBurnt < limit and distToBurnt > 0):
+    elif (distToBurnt < limit and distToBurnt > 0): # over the limit and results in burnt
         status = "Your Marshmallow is golden brown uwu"
         case = 4
     else:
@@ -90,27 +86,8 @@ def checkIfBurnt(limit, marshCook):
         case = 5
     return status,case
 
-def getHighScore():
+def getHighScore(): # Gets the current high school
     global scoreArray
     scoreArray.sort(reverse=True)
     highScore = scoreArray[0]
     return highScore
-
-def continueGame(startGame):
-    if (startGame == True):
-        start()
-    elif startGame == False:
-        print("Your current high score is:", getHighScore())
-        print("Have a good day {}!".format(usern))
-        return False
-    else:
-        print("Wrong input, please enter (Y) or (N).")
-
-def inGame():
-    global flag
-    while flag:
-        roastMarshmallow()
-
-def start():
-    global flag
-    flag = True
