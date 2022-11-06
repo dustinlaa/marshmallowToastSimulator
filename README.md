@@ -16,4 +16,4 @@ But be careful, too much toasting will burn your marshmallow.
 
 Continue to toast golden brown marshmallows to increase your streak and go for a high score!
 
-**To play, run marshmallowToastSimulator.py**
+**To play, download all files and run marshmallowToastSimulator.py**
