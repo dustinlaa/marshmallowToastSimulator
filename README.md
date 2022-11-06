@@ -1,10 +1,11 @@
 
 # Marshmallow Toast Simulator
 ## HackNJIT 2022
-### Created by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala
+## Created by Adrianna Rust, Andrew Dickman, Dustin La, and Hrishikesh Sakunala
 
 
 **Welcome to Marshmallow Toast Simulator!**
+
 
 Your goal is to get your marshmallow to a scrumptious golden brown.  
 
